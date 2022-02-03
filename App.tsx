@@ -88,7 +88,7 @@ export default function App() {
       <PaperProvider theme={theme}>
         <NavigationContainer>
           <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: true }} />
+            <Stack.Screen name="Home" component={HomeScreen} />
             <Stack.Screen name="DarkModePaper" component={DarkModeRNPaperScreen} options={{ title: 'Dark Mode' }} />
           </Stack.Navigator>
         </NavigationContainer>
