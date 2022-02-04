@@ -13,8 +13,8 @@ export default function HomeScreen() {
 
     const renderSectionHeader = ({ section }: { section: { title: string } }) => {
         return (
-            <View style={{ backgroundColor: dark ? Colors.indigo900 : Colors.indigo100, opacity: 0.8, padding: 8 }}>
-                <List.Subheader style={{ opacity: 1 }}>{section.title}</List.Subheader>
+            <View style={{ backgroundColor: dark ? Colors.indigo900 : Colors.indigo100, opacity: 0.8, }}>
+                <List.Subheader style={{ opacity: 1, margin: 8 }}>{section.title}</List.Subheader>
                 <Divider />
             </View>
         )
