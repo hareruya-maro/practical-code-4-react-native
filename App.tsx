@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React, { useEffect } from 'react';
 import { AppState, useColorScheme } from 'react-native';
 import { DarkTheme, DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
-import { AppContext } from './Context';
+import { DarkModeContext } from './context/DarkModeContext';
 import DarkModeRNPaperScreen from './examples/dark-mode-rn-paper/DarkModeRNPaperScreen';
 import HomeScreen from './home/HomeScreen';
 
@@ -84,7 +84,7 @@ export default function App() {
   // *** ダークモード利用関連 ここまで *** 
 
   return (
-    <AppContext.Provider value={{ dark, setDark, useDeviceColorScheme, setUseDeviceColorScheme }}>
+    <DarkModeContext.Provider value={{ dark, setDark, useDeviceColorScheme, setUseDeviceColorScheme }}>
       <PaperProvider theme={theme}>
         <NavigationContainer>
           <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
@@ -93,6 +93,6 @@ export default function App() {
           </Stack.Navigator>
         </NavigationContainer>
       </PaperProvider>
-    </AppContext.Provider>
+    </DarkModeContext.Provider>
   );
 }

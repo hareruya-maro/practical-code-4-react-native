@@ -4,14 +4,15 @@ import * as React from 'react';
 import { View } from 'react-native';
 import { Appbar, Subheading, Surface, Switch, Text, Title, useTheme } from 'react-native-paper';
 import { StackParamList } from '../../App';
-import { AppContext } from '../../Context';
+import { DarkModeContext } from '../../context/DarkModeContext';
+
 type Props = NativeStackNavigationProp<StackParamList, 'DarkModePaper'>;
 
 export default function DarkModeRNPaperScreen() {
     const navigation = useNavigation<Props>();
     const { colors, roundness } = useTheme();
 
-    const { dark, setDark, useDeviceColorScheme, setUseDeviceColorScheme } = React.useContext(AppContext);
+    const { dark, setDark, useDeviceColorScheme, setUseDeviceColorScheme } = React.useContext(DarkModeContext);
 
     // ダークモードスイッチ切り替え
     const toggleDark = (value: boolean) => {
@@ -23,7 +24,7 @@ export default function DarkModeRNPaperScreen() {
         }
     }
 
-    // 自動切り替え利用スイッチ切り替え
+    // 端末設定利用スイッチ切り替え
     const toggleUseDeviceColorScheme = (value: boolean) => {
         setUseDeviceColorScheme(value);
     }
