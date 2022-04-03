@@ -8,7 +8,7 @@ import useStoreReview from './useStoreReview';
 
 type Props = NativeStackNavigationProp<StackParamList, 'StoreReview'>;
 
-export default function StoreReview() {
+export default function StoreReviewScreen() {
     const navigation = useNavigation<Props>();
     const { colors, roundness } = useTheme();
     const { requestReview, nextReviewDate, resetNextReviewDate } = useStoreReview();
