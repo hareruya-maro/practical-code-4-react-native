@@ -42,7 +42,7 @@ export default function useStoreReview(periodByMonth = 6) {
                 saveNextReviewDate();
             }
         });
-    }, [periodByMonth]);
+    }, []);
 
     // レビュー依頼
     const requestReview = async () => {
