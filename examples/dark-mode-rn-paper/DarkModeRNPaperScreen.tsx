@@ -45,7 +45,8 @@ export default function DarkModeRNPaperScreen() {
                         <Text>＊ダークモードを利用するか否か</Text>
                         <Text>＊端末の設定に合わせて自動で切り替えるか否か</Text>
                     </View>
-                    <Text >ダークモードを利用する場合、以下の２つの設定を切り替えられるようにすると、親切になります。</Text>
+                    <Text >以下のように、ダークモード利用のスイッチと端末設定利用のスイッチの二つで切り替えられるようにしましょう。{'\n\n'}
+                        場合によっては、セレクトボックスから選ばせる形でも良いでしょう。</Text>
                 </Surface>
                 <Surface style={{ padding: 16, borderRadius: roundness, marginBottom: 16 }}>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>

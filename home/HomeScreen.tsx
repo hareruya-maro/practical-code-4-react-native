@@ -20,7 +20,7 @@ export default function HomeScreen() {
         )
     }
 
-    const renderItem = ({ item }: { item: { title: string, description: string, routeName: keyof StackParamList } }) => {
+    const renderItem = ({ item }: { item: { icon: string, title: string, description: string, routeName: keyof StackParamList } }) => {
         return (
             <View style={{ backgroundColor: colors.surface }}>
                 <List.Item
@@ -29,7 +29,7 @@ export default function HomeScreen() {
                     description={item.description}
                     descriptionNumberOfLines={3}
                     onPress={() => navigation.navigate(item.routeName)}
-                    left={() => <View style={{ justifyContent: 'center' }}><List.Icon icon="invert-colors" /></View>}
+                    left={() => <View style={{ justifyContent: 'center' }}><List.Icon icon={item.icon} /></View>}
                     right={() => <View style={{ justifyContent: 'center' }}><List.Icon icon="chevron-right" /></View>}
                 />
                 <Divider />
@@ -37,13 +37,19 @@ export default function HomeScreen() {
         )
     }
 
-    const sections: { title: string, data: { title: string, description: string, routeName: keyof StackParamList }[] }[]
+    const sections: { title: string, data: { icon: string, title: string, description: string, routeName: keyof StackParamList }[] }[]
         = [{
             title: '画面表示系',
             data: [{
+                icon: "invert-colors",
                 title: "Dark Mode (React Native Paper)",
                 description: "React Native Paper利用時にダークモード機能を組み込む場合のサンプル",
-                routeName: 'DarkModePaper'
+                routeName: 'DarkModePaper',
+            }, {
+                icon: "store",
+                title: "ストアレビュー",
+                description: "ストアレビュー機能を組み込む場合のサンプル",
+                routeName: 'StoreReview'
             }]
         }];
 

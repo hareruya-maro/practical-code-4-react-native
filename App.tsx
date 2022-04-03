@@ -6,11 +6,13 @@ import { useColorScheme } from 'react-native';
 import { DarkTheme, DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 import { DarkModeContext } from './context/DarkModeContext';
 import DarkModeRNPaperScreen from './examples/dark-mode-rn-paper/DarkModeRNPaperScreen';
+import StoreReviewScreen from './examples/store-review/StoreReviewScreen';
 import HomeScreen from './home/HomeScreen';
 
 export type StackParamList = {
   Home: undefined;
   DarkModePaper: undefined;
+  StoreReview: undefined;
 };
 
 const Stack = createNativeStackNavigator<StackParamList>();
@@ -77,7 +79,8 @@ export default function App() {
         <NavigationContainer>
           <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
             <Stack.Screen name="Home" component={HomeScreen} />
-            <Stack.Screen name="DarkModePaper" component={DarkModeRNPaperScreen} options={{ title: 'Dark Mode' }} />
+            <Stack.Screen name="DarkModePaper" component={DarkModeRNPaperScreen} />
+            <Stack.Screen name="StoreReview" component={StoreReviewScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </PaperProvider>
